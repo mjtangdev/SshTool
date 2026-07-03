@@ -1,16 +1,35 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.sshtool.app-mergeDebugResources-42:/values-v16/values-v16.xml",
+            "outputFile": "com.example.sshtool.app-mergeDebugResources-61:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/mjtang/.gradle/caches/transforms-4/e1c82835ca674040870752ab1399d57d/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/mjtang/.gradle/caches/transforms-4/c563a76e4ce83132d89e65817e7a5773/transformed/core-1.12.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
                         "endColumns": "65",
                         "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/mjtang/.gradle/caches/transforms-4/ba39f180641d40ae96a47e73169b0613/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
                     }
                 }
             ]

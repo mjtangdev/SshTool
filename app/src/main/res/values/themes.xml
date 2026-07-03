@@ -1,6 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.SshTool" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.SshTool" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Main background for the app and the initial window -->
         <item name="android:windowBackground">#0A0E14</item>
         <item name="android:statusBarColor">#0A0E14</item>
+        <item name="android:navigationBarColor">#0A0E14</item>
+
+        <item name="colorPrimary">#00B2FF</item>
+        <item name="colorPrimaryVariant">#00B2FF</item>
+        <item name="colorSecondary">#4AF626</item>
     </style>
 </resources>

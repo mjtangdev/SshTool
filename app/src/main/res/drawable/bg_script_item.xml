@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1% White overlay (#03FFFFFF) for the absolute minimal distinction -->
+    <solid android:color="#03FFFFFF" />
+    <corners android:radius="12dp" />
+</shape>
