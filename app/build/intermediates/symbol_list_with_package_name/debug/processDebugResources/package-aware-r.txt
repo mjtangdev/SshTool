@@ -2996,6 +2996,8 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_file
+drawable ic_folder
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3192,6 +3194,7 @@ id btn_add_empty
 id btn_add_script
 id btn_connect
 id btn_edit
+id btn_files
 id btn_remove_script
 id btn_save
 id buttonPanel
@@ -3336,6 +3339,7 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id iv_file_icon
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3463,6 +3467,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
@@ -3476,6 +3481,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_files
 id rv_hosts
 id save_non_transition_alpha
 id save_overlay_view
@@ -3585,6 +3591,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_current_path
+id tv_empty
+id tv_file_info
+id tv_file_name
 id tv_host
 id tv_name
 id tv_script_label
@@ -3744,6 +3754,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_file
 layout item_host
 layout item_script_input
 layout m3_alert_dialog
@@ -3804,6 +3815,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout screen_create_host
+layout screen_file_manager
 layout screen_host_list
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

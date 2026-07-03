@@ -16,6 +16,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.sshtool.ui.screens.CreateHostScreen
 import com.example.sshtool.ui.screens.HostListScreen
 import com.example.sshtool.ui.screens.TerminalScreen
+import com.example.sshtool.ui.screens.FileManagerScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -35,6 +36,7 @@ sealed class Screen {
     object CreateHost : Screen()
     data class EditHost(val entity: SshHostEntity) : Screen()
     data class Terminal(val host: SshHost, val initialCommand: String? = null) : Screen()
+    data class FileManager(val host: SshHost) : Screen()
 }
 
 // Colors
@@ -97,7 +99,8 @@ class MainActivity : AppCompatActivity() {
                                 vm = viewModel,
                                 onAddHost = { currentScreen = Screen.CreateHost },
                                 onEditHost = { entity -> currentScreen = Screen.EditHost(entity) },
-                                onConnect = { host, cmd -> currentScreen = Screen.Terminal(host, cmd) }
+                                onConnect = { host, cmd -> currentScreen = Screen.Terminal(host, cmd) },
+                                onFileManager = { host -> currentScreen = Screen.FileManager(host) }
                             )
                         }
                         is Screen.CreateHost -> {
@@ -122,6 +125,13 @@ class MainActivity : AppCompatActivity() {
                             TerminalScreen(
                                 sshHost = screen.host,
                                 initialCommand = screen.initialCommand,
+                                onBack = { currentScreen = Screen.HostList }
+                            )
+                        }
+                        is Screen.FileManager -> {
+                            BackHandler { currentScreen = Screen.HostList }
+                            FileManagerScreen(
+                                sshHost = screen.host,
                                 onBack = { currentScreen = Screen.HostList }
                             )
                         }

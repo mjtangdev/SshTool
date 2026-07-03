@@ -50,6 +50,53 @@ object SshBridge {
         }
     }
 
+    /**
+     * Lists files and returns the canonical path and the file list.
+     */
+    suspend fun listFiles(host: SshHost, path: String): Pair<String, List<RemoteFile>> = withContext(Dispatchers.IO) {
+        val client = SSHClient(SshApplication.getSshConfig())
+        try {
+            client.addHostKeyVerifier(PromiscuousVerifier())
+            client.connect(host.host.trim())
+            client.authPassword(host.user.trim(), host.pass.trim())
+            
+            client.newSFTPClient().use { sftp ->
+                // Resolve the real path (e.g. convert "." to "/home/admin")
+                val canonicalPath = sftp.canonicalize(path)
+                
+                val list = sftp.ls(canonicalPath).map { entry ->
+                    RemoteFile(
+                        name = entry.name,
+                        path = if (canonicalPath.endsWith("/")) canonicalPath + entry.name else "$canonicalPath/${entry.name}",
+                        isDirectory = entry.isDirectory,
+                        size = entry.attributes.size,
+                        lastModified = entry.attributes.mtime * 1000L
+                    )
+                }.toMutableList()
+
+                // Remove . and .. if they exist to handle them manually
+                list.removeAll { it.name == "." || it.name == ".." }
+                
+                val sortedList = list.sortedWith(compareBy({ !it.isDirectory }, { it.name }))
+                
+                val finalList = mutableListOf<RemoteFile>()
+                // Add .. at the top if not at root
+                if (canonicalPath != "/") {
+                    val parentPath = canonicalPath.substringBeforeLast("/", "").ifEmpty { "/" }
+                    finalList.add(RemoteFile("..", parentPath, true, 0, 0))
+                }
+                finalList.addAll(sortedList)
+                
+                canonicalPath to finalList
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "SFTP List failed: ${e.message}")
+            path to emptyList()
+        } finally {
+            try { client.disconnect() } catch (e: Exception) {}
+        }
+    }
+
     suspend fun connect(host: SshHost): Any? = withContext(Dispatchers.IO) {
         val client = SSHClient(SshApplication.getSshConfig())
         try {

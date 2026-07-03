@@ -1,11 +1,15 @@
 [
     {
-        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_screen_host_list.xml.flat",
-        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/layout/screen_host_list.xml"
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_item_file.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/layout/item_file.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_screen_create_host.xml.flat",
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/layout/screen_create_host.xml"
+    },
+    {
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_screen_host_list.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/layout/screen_host_list.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_item_script_input.xml.flat",
@@ -34,10 +38,6 @@
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/menu_menu_create_host.xml.flat",
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/menu/menu_create_host.xml"
-    },
-    {
-        "merged": "com.example.sshtool.app-debug-63:/layout_screen_create_host.xml.flat",
-        "source": "com.example.sshtool.app-main-65:/layout/screen_create_host.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-xhdpi_ic_launcher.xml.flat",
@@ -84,8 +84,8 @@
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.sshtool.app-debug-63:/drawable_ic_visibility.xml.flat",
-        "source": "com.example.sshtool.app-main-65:/drawable/ic_visibility.xml"
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/layout_screen_file_manager.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/layout/screen_file_manager.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/drawable_ic_remove_circle.xml.flat",
@@ -96,20 +96,32 @@
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-hdpi_ic_launcher.xml.flat",
-        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/mipmap-hdpi/ic_launcher.xml"
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/drawable_ic_visibility.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/drawable/ic_visibility.xml"
     },
     {
-        "merged": "com.example.sshtool.app-debug-63:/drawable_ic_visibility_off.xml.flat",
-        "source": "com.example.sshtool.app-main-65:/drawable/ic_visibility_off.xml"
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/drawable_ic_visibility_off.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/drawable/ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/mipmap-hdpi/ic_launcher.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-xxxhdpi_ic_launcher.xml.flat",
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/mipmap-xxxhdpi/ic_launcher.xml"
     },
     {
+        "merged": "com.example.sshtool.app-debug-63:/drawable_ic_file.xml.flat",
+        "source": "com.example.sshtool.app-main-65:/drawable/ic_file.xml"
+    },
+    {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-mdpi_ic_launcher_round.xml.flat",
         "source": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-main-65:/mipmap-mdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.sshtool.app-debug-63:/drawable_ic_folder.xml.flat",
+        "source": "com.example.sshtool.app-main-65:/drawable/ic_folder.xml"
     },
     {
         "merged": "/Users/mjtang/.gradle/daemon/8.7/com.example.sshtool.app-debug-63:/mipmap-hdpi_ic_launcher_round.xml.flat",

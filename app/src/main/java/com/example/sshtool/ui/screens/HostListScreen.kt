@@ -19,7 +19,8 @@ fun HostListScreen(
     vm: SshViewModel,
     onAddHost: () -> Unit,
     onEditHost: (SshHostEntity) -> Unit,
-    onConnect: (SshHost, String?) -> Unit
+    onConnect: (SshHost, String?) -> Unit,
+    onFileManager: (SshHost) -> Unit
 ) {
     val hostsEntity by vm.hosts.collectAsState()
     
@@ -34,7 +35,8 @@ fun HostListScreen(
             rv.layoutManager = LinearLayoutManager(context)
             val adapter = HostAdapter(
                 onEdit = { entity -> onEditHost(entity) },
-                onConnect = { host -> onConnect(host, null) }
+                onConnect = { host -> onConnect(host, null) },
+                onFiles = { host -> onFileManager(host) }
             )
             rv.adapter = adapter
             
@@ -76,7 +78,8 @@ fun HostListScreen(
 
 class HostAdapter(
     private val onEdit: (SshHostEntity) -> Unit,
-    private val onConnect: (SshHost) -> Unit
+    private val onConnect: (SshHost) -> Unit,
+    private val onFiles: (SshHost) -> Unit
 ) : RecyclerView.Adapter<HostAdapter.ViewHolder>() {
     private var items = listOf<SshHostEntity>()
 
@@ -93,7 +96,6 @@ class HostAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         
-        // Parse scripts for the SshHost data class
         val scripts = if (item.scriptsJson.isNotBlank()) {
             item.scriptsJson.split("|||").mapNotNull {
                 val parts = it.split(">>>")
@@ -108,6 +110,7 @@ class HostAdapter(
         
         holder.btnEdit.setOnClickListener { onEdit(item) }
         holder.btnConnect.setOnClickListener { onConnect(sshHost) }
+        holder.btnFiles.setOnClickListener { onFiles(sshHost) }
         
         holder.itemView.setOnClickListener { onConnect(sshHost) }
     }
@@ -119,5 +122,6 @@ class HostAdapter(
         val host: TextView = v.findViewById(R.id.tv_host)
         val btnEdit: View = v.findViewById(R.id.btn_edit)
         val btnConnect: View = v.findViewById(R.id.btn_connect)
+        val btnFiles: View = v.findViewById(R.id.btn_files)
     }
 }
